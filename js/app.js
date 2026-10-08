@@ -693,6 +693,7 @@
            <div class="row wrap"><button class="btn" data-do="start">진행 시작하기</button>
            <button class="btn ghost" data-do="match">다시 매칭</button></div>`
         : `<p>${members.length}명을 무작위로 한 바퀴(A→B→C→…→A) 이어서 매칭해요.</p>
+           ${members.length < 3 ? `<p class="small" style="color:var(--warn)">⚠️ 3명 이상 모여야 매칭할 수 있어요 (지금 ${members.length}명). 모집을 다시 열어 더 받아주세요.</p>` : ''}
            <div class="row wrap"><button class="btn" data-do="match" ${members.length < 3 ? 'disabled' : ''}>🎲 매칭하기</button>
            <button class="btn ghost" data-do="reopen">모집 다시 열기</button></div>`;
     } else if (s.status === 'active') {
